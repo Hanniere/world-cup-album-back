@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.microservice.worldcup.albumservice.model.Album;
-import com.springboot.microservice.worldcup.albumservice.service.AlbumService;
+import com.springboot.microservice.worldcup.albumservice.model.impl.Album;
+import com.springboot.microservice.worldcup.albumservice.service.impl.AlbumService;
 
 @RestController
 @RequestMapping(value = "/api/album", produces = MediaType.APPLICATION_JSON_VALUE)

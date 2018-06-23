@@ -1,4 +1,4 @@
-package com.springboot.microservice.worldcup.albumservice.model;
+package com.springboot.microservice.worldcup.albumservice.model.impl;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -13,10 +13,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.springboot.microservice.worldcup.albumservice.model.AbstractModel;
+
 
 @Entity
 @Table(name = "album")
-public class Album implements Serializable {
+public class Album extends AbstractModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -35,8 +37,12 @@ public class Album implements Serializable {
 			name = "album_sticker",
 			joinColumns = {@JoinColumn(name = "album_id")},
 			inverseJoinColumns = {@JoinColumn(name = "sticker_id")})
-	Set<Sticker> stickerList;
+	Set<Sticker> stickerSet;
 
+
+	public Album() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Album(Integer id, Integer userId,
 			Double price, Set<Sticker> stickerList) {
@@ -44,10 +50,11 @@ public class Album implements Serializable {
 		this.id = id;
 		this.userId = userId;
 		this.price = price;
-		this.stickerList = stickerList;
+		this.stickerSet = stickerList;
 	}
 
 
+	@SuppressWarnings("unchecked")
 	public Integer getId() {
 		return id;
 	}
@@ -72,12 +79,12 @@ public class Album implements Serializable {
 		this.price = price;
 	}
 
-	public Set<Sticker> getStickerList() {
-		return stickerList;
+	public Set<Sticker> getStickerSet() {
+		return stickerSet;
 	}
 
-	public void setStickerList(Set<Sticker> stickerList) {
-		this.stickerList = stickerList;
+	public void setStickerSet(Set<Sticker> stickerList) {
+		this.stickerSet = stickerList;
 	}
 
 }

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.microservice.worldcup.albumservice.model.Sticker;
-import com.springboot.microservice.worldcup.albumservice.service.StickerService;
+import com.springboot.microservice.worldcup.albumservice.model.impl.Sticker;
+import com.springboot.microservice.worldcup.albumservice.service.impl.StickerService;
 
 @RestController
 @RequestMapping(value = "/api/sticker", produces = MediaType.APPLICATION_JSON_VALUE)
