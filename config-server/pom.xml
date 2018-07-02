@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>config-server</name>
-    <description>Authorization Server for World Cup Album</description>
+    <description>Configuration Server for World Cup Album</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

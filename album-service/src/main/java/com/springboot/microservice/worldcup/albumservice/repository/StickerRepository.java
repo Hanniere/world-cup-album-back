@@ -14,9 +14,9 @@ import com.springboot.microservice.worldcup.albumservice.model.impl.Sticker;
  * @author hveloso
  *
  */
-public interface StickerRepository extends JpaRepository<Sticker, Integer>{
+public interface StickerRepository extends JpaRepository<Sticker, Long>{
 
-	@Query("SELECT s FROM Sticker s WHERE LOWER(s.name) = :name")
+    @Query("SELECT s FROM Sticker s WHERE LOWER(s.name) = :name")
     Optional<Album> findByPlayerName(@Param("name") String name);
 
 }

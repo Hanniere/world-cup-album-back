@@ -13,9 +13,9 @@ import com.springboot.microservice.worldcup.albumservice.model.impl.Album;
  * @author hveloso
  *
  */
-public interface AlbumRepository extends JpaRepository<Album, Integer>{
+public interface AlbumRepository extends JpaRepository<Album, Long>{
 
-	@Query("SELECT a FROM Album a WHERE LOWER(a.userId) = :userId")
-    Optional<Album> findByUserId(@Param("userId") Integer userId);
+    @Query("SELECT a FROM Album a WHERE LOWER(a.userId) = :userId")
+    Optional<Album> findByUserId(@Param("userId") Long userId);
 
 }

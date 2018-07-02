@@ -14,12 +14,11 @@ import com.springboot.microservice.worldcup.albumservice.service.impl.StickerSer
 @RequestMapping(value = "/api/sticker", produces = MediaType.APPLICATION_JSON_VALUE)
 public class StickerController {
 
-	@Autowired
+    @Autowired
     private StickerService stickerService;
 
 
-
-	@RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Iterable<Sticker>> findAll(){
         return ResponseEntity.ok().body(stickerService.findAll());
     }
